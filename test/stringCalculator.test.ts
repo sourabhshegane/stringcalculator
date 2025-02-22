@@ -15,3 +15,7 @@ test("If just one number is passed, the same number should be returned", () => {
 test("If multiple numbers are passed, their sum should be returned", () => {
     expect(add("2,3")).toBe(5);
 });
+
+test("If new line between numbers instead of commas is passed, the correct sum should be returned", () => {
+    expect(add("2\n3")).toBe(5);
+});
