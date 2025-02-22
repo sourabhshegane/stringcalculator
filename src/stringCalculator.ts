@@ -3,7 +3,8 @@ export function add(input: string): number {
         return 0;
     }
 
-    const numbers = input.split(',').map(str => {
+    // Split by comma (`,`) or newline (`\n`)
+    const numbers = input.split(/[\n,]/).map(str => {
         if (isNaN(Number(str))) {
             throw new Error(`Invalid input: Not a number`);
         }
