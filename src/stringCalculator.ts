@@ -3,9 +3,12 @@ export function add(input: string): number {
         return 0;
     }
 
-    input.split(',').map(str => {
+    const numbers = input.split(',').map(str => {
         if (isNaN(Number(str))) {
             throw new Error(`Invalid input: Not a number`);
         }
+        return Number(str);
     });
+
+    return numbers.reduce((sum, num) => sum + num, 0);
 }
