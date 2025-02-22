@@ -25,5 +25,11 @@ export function add(input: string): number {
         return Number(str);
     });
 
+    // Check for negative numbers
+    const negatives = numbers.filter(num => num < 0);
+    if (negatives.length > 0) {
+        throw new Error(`Negatives not allowed: ${negatives.join(', ')}`);
+    }
+
     return numbers.reduce((sum, num) => sum + num, 0);
 }
