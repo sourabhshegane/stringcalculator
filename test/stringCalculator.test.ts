@@ -19,3 +19,7 @@ test("If multiple numbers are passed, their sum should be returned", () => {
 test("If new line between numbers instead of commas is passed, the correct sum should be returned", () => {
     expect(add("2\n3")).toBe(5);
 });
+
+test("throws an error if just a new line is passed without a number", () => {
+    expect(() => add("2,\n")).toThrow("Invalid input: Trailing delimiter found");
+});
