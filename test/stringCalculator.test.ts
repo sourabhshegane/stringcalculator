@@ -11,3 +11,7 @@ test("throws an error if the input is not a number", () => {
 test("If just one number is passed, the same number should be returned", () => {
     expect(add("2")).toBe(2);
 });
+
+test("If multiple numbers are passed, their sum should be returned", () => {
+    expect(add("2,3")).toBe(5);
+});
