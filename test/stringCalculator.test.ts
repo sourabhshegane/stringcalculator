@@ -28,3 +28,12 @@ test("Supports custom delimiters specified in the format '//[delimiter]\\n[numbe
     expect(add("//;\n1;2")).toBe(3); // Custom delimiter is ";"
     expect(add("//|\n1|2|3")).toBe(6); // Custom delimiter is "|"
 });
+
+test("Throws an error if a negative number is passed", () => {
+    expect(() => add("-1")).toThrow("Negatives not allowed: -1");
+});
+
+test("Throws an error if multiple negative numbers are passed", () => {
+    expect(() => add("-1,-2,-3")).toThrow("Negatives not allowed: -1, -2, -3");
+});
+
