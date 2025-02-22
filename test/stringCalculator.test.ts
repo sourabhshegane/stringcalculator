@@ -23,3 +23,8 @@ test("If new line between numbers instead of commas is passed, the correct sum s
 test("throws an error if just a new line is passed without a number", () => {
     expect(() => add("2,\n")).toThrow("Invalid input: Trailing delimiter found");
 });
+
+test("supports custom delimiters specified in the format '//[delimiter]\\n[numbers]'", () => {
+    expect(add("//;\n1;2")).toBe(3); // Custom delimiter is ";"
+    expect(add("//|\n1|2|3")).toBe(6); // Custom delimiter is "|"
+});
