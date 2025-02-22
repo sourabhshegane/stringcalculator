@@ -1,0 +1,7 @@
+{
+  "outDir": "./dist",
+  "rootDir": "./src",
+  "module": "ESNext",
+  "target": "ES6",
+  "strict": true
+}
